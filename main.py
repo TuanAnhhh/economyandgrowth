@@ -35,9 +35,44 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/simplechart')
+@app.route('/matplotlib')
 def simplechart():
     return render_template('simplechart.html')
+
+
+@app.route('/plotly')
+def plotlyy():
+    return render_template('plotly.html')
+
+
+@app.route('/scatter')
+def scatter():
+    return render_template('scatter.html')
+
+
+@app.route('/line')
+def line():
+    return render_template('line.html')
+
+
+@app.route('/pie')
+def pie():
+    return render_template('pie.html')
+
+
+@app.route('/boxplot')
+def boxplot():
+    return render_template('boxplot.html')
+
+
+@app.route('/histogram')
+def histogram():
+    return render_template('histogram.html')
+
+
+@app.route('/bar')
+def bar():
+    return render_template('bar.html')
 
 
 @app.route('/page1')

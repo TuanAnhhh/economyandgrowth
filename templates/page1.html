@@ -103,7 +103,8 @@
             <!-- Navbar -->
             <div class="card text-center">
                 <div class="card-body">
-                    <h4 class="card-title">Biểu đồ thanh toán thu nhập chính - Primary income payments (BoP, current
+                    <h4 class="card-title">Biểu đồ thể hiện thanh toán thu nhập chính - Primary income payments (BoP,
+                        current
                         US$)</h4>
                 </div>
             </div>
@@ -113,10 +114,10 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ thanh toán thu
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ thể hiện thanh toán thu
                                     nhập chính
                                     (BoP, US$)</h5>
-                                <p class="card-category">24 Hours performance</p>
+                                <p class="card-category"> (BoP, US$)</p>
                             </div>
                             <div class="card-body ">
                                 <div class="chart" id="bargraph">
@@ -136,28 +137,23 @@
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title">Bảng tần số, tần suất, tần suất tích lũy</h5>
+                                <h5 class="card-title style=" color: #f6c768;"">Bảng tần số, tần suất, tần suất tích lũy
+                                </h5>
                             </div>
                             <div class="card-body ">
                                 {% for table in bangSoLieu %}
                                 {{ table|safe }}
                                 {% endfor %}
                             </div>
-                            <!-- <div class="card-footer ">
-                                <div class="legend">
-                                    <i class="fa fa-circle text-primary"></i> Opened
-                                    <i class="fa fa-circle text-warning"></i> Read
-                                    <i class="fa fa-circle text-danger"></i> Deleted
-                                    <i class="fa fa-circle text-gray"></i> Unopened
-                                </div>
+                            <div class="card-footer ">
                                 <hr>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title">Biểu đồ Tần suất</h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ Tần suất</h5>
                             </div>
                             <div class="card-body ">
                                 <div class="chart" id="bargraph2">
@@ -167,24 +163,15 @@
                                     </script>
                                 </div>
                             </div>
-                            <!-- <div class="card-footer ">
-                                <div class="legend">
-                                    <i class="fa fa-circle text-primary"></i> Opened
-                                    <i class="fa fa-circle text-warning"></i> Read
-                                    <i class="fa fa-circle text-danger"></i> Deleted
-                                    <i class="fa fa-circle text-gray"></i> Unopened
-                                </div>
+                            <div class="card-footer ">
                                 <hr>
-                                <div class="stats">
-                                    <i class="fa fa-calendar"></i> Number of emails sent
-                                </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card card-chart">
                             <div class="card-header">
-                                <h5 class="card-title">Biểu đồ tần số</h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số</h5>
                             </div>
                             <div class="card-body">
                                 <div class="chart" id="bargraph1">
@@ -194,16 +181,9 @@
                                     </script>
                                 </div>
                             </div>
-                            <!-- <div class="card-footer">
-                                <div class="chart-legend">
-                                    <i class="fa fa-circle text-info"></i> Tesla Model S
-                                    <i class="fa fa-circle text-warning"></i> BMW 5 Series
-                                </div>
-                                <hr />
-                                <div class="card-stats">
-                                    <i class="fa fa-check"></i> Data information certified
-                                </div>
-                            </div> -->
+                            <div class="card-footer ">
+                                <hr>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -211,7 +191,8 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title">Biểu đồ tần số, tần suất, tần suất tích lũy</h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số, tần suất, tần suất tích
+                                    lũy</h5>
                             </div>
                             <div class="card-body ">
                                 <div class="chart" id="bargraph3">
@@ -221,6 +202,9 @@
                                     </script>
                                 </div>
                             </div>
+                            <div class="card-footer ">
+                                <hr>
+                            </div>
 
                         </div>
                     </div>
@@ -229,7 +213,7 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title">Biểu đồ Box</h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ Box</h5>
                             </div>
                             <div class="card-body ">
                                 <div class="chart" id="bargraphbox">
@@ -239,6 +223,9 @@
                                     </script>
                                 </div>
                             </div>
+                            <div class="card-footer ">
+                                <hr>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -246,7 +233,7 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title">Biểu đồ Histogram</h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ Histogram</h5>
                             </div>
                             <div class="card-body ">
                                 <div class="chart" id="bargraphhist">
@@ -256,6 +243,9 @@
                                     </script>
                                 </div>
                             </div>
+                            <div class="card-footer ">
+                                <hr>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -263,19 +253,12 @@
             <footer class="footer footer-black  footer-white ">
                 <div class="container-fluid">
                     <div class="row">
-                        <nav class="footer-nav">
-                            <ul>
-                                <li><a href="https://www.creative-tim.com" target="_blank">Creative Tim</a></li>
-                                <li><a href="https://www.creative-tim.com/blog" target="_blank">Blog</a></li>
-                                <li><a href="https://www.creative-tim.com/license" target="_blank">Licenses</a></li>
-                            </ul>
-                        </nav>
                         <div class="credits ml-auto">
                             <span class="copyright">
                                 ©
                                 <script>
                                     document.write(new Date().getFullYear())
-                                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                                </script>, made with <i class="fa fa-heart heart"></i> by Data Team
                             </span>
                         </div>
                     </div>
