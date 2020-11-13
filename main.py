@@ -292,191 +292,191 @@ def tansuat_tso_tstl_page4():
 # -----------PAGE3-----------
 
 
-def tansuat_tso_tstl_page3():
-    GDP_AFF_year, GDP_AFF_value = getYear_Value(
-        'Agriculture, forestry, and fishing, value added (% of GDP)')
-    Growth_AFF_year, Growth_AFF_value = getYear_Value(
-        'Agriculture, forestry, and fishing, value added (annual % growth)')
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=Growth_AFF_year, y=Growth_AFF_value, mode='lines+markers',
-                             name='% Tăng trưởng hàng năm', marker=dict(color='#fc6d00')))
-    fig.add_trace(go.Bar(x=GDP_AFF_year, y=GDP_AFF_value, text=GDP_AFF_value,
-                         textposition='outside', marker=dict(color='#0099ff'), name='%GDP'))
-    fig.update_layout(title='Biểu đồ %GDP và % tăng trưởng hàng năm của nông, lâm, ngư nghiệp',
-                      xaxis_title='Năm',
-                      yaxis_title='Phần trăm')
-    # Chia khoảng % GDP
-    k_gdp = round((2*len(GDP_AFF_value))**(1/3))
-    h_gdp = math.ceil((float(max(GDP_AFF_value)) -
-                       float(min(GDP_AFF_value)))/k_gdp)
-    k1_gdp = min(GDP_AFF_value)+h_gdp
-    k2_gdp = min(GDP_AFF_value)+2*h_gdp
-    k3_gdp = min(GDP_AFF_value)+3*h_gdp
+# def tansuat_tso_tstl_page3():
+#     GDP_AFF_year, GDP_AFF_value = getYear_Value(
+#         'Agriculture, forestry, and fishing, value added (% of GDP)')
+#     Growth_AFF_year, Growth_AFF_value = getYear_Value(
+#         'Agriculture, forestry, and fishing, value added (annual % growth)')
+#     fig = go.Figure()
+#     fig.add_trace(go.Scatter(x=Growth_AFF_year, y=Growth_AFF_value, mode='lines+markers',
+#                              name='% Tăng trưởng hàng năm', marker=dict(color='#fc6d00')))
+#     fig.add_trace(go.Bar(x=GDP_AFF_year, y=GDP_AFF_value, text=GDP_AFF_value,
+#                          textposition='outside', marker=dict(color='#0099ff'), name='%GDP'))
+#     fig.update_layout(title='Biểu đồ %GDP và % tăng trưởng hàng năm của nông, lâm, ngư nghiệp',
+#                       xaxis_title='Năm',
+#                       yaxis_title='Phần trăm')
+#     # Chia khoảng % GDP
+#     k_gdp = round((2*len(GDP_AFF_value))**(1/3))
+#     h_gdp = math.ceil((float(max(GDP_AFF_value)) -
+#                        float(min(GDP_AFF_value)))/k_gdp)
+#     k1_gdp = min(GDP_AFF_value)+h_gdp
+#     k2_gdp = min(GDP_AFF_value)+2*h_gdp
+#     k3_gdp = min(GDP_AFF_value)+3*h_gdp
 
-    khoang1_gdp, khoang2_gdp, khoang3_gdp, khoang4_gdp = [], [], [], []
-    for i in GDP_AFF_value:
-        if i < k1_gdp-0.01:
-            khoang1_gdp.append(i)
-        elif i >= k1_gdp and i < k2_gdp-0.01:
-            khoang2_gdp.append(i)
-        elif i >= k2_gdp and i < k3_gdp-0.01:
-            khoang3_gdp.append(i)
-        elif i >= k3_gdp:
-            khoang4_gdp.append(i)
+#     khoang1_gdp, khoang2_gdp, khoang3_gdp, khoang4_gdp = [], [], [], []
+#     for i in GDP_AFF_value:
+#         if i < k1_gdp-0.01:
+#             khoang1_gdp.append(i)
+#         elif i >= k1_gdp and i < k2_gdp-0.01:
+#             khoang2_gdp.append(i)
+#         elif i >= k2_gdp and i < k3_gdp-0.01:
+#             khoang3_gdp.append(i)
+#         elif i >= k3_gdp:
+#             khoang4_gdp.append(i)
 
-    # Khoảng
-    khoang_gdp = ['< '+str(k1_gdp-0.01), str(k1_gdp) + " - " + str(k2_gdp-0.01),
-                  str(k2_gdp) + " - " + str(k3_gdp-0.01), '>= ' + str(k3_gdp)]
-    # Tần số
-    tanso_gdp = [len(khoang1_gdp), len(khoang2_gdp),
-                 len(khoang3_gdp), len(khoang4_gdp)]
-    # Tần xuất
-    tanXuat_gdp = [round((i*100)/sum(tanso_gdp), 2)for i in tanso_gdp]
-    # Tần xuất tích lũy
-    tanXuatTL_gdp = []
-    s_gdp = 0
-    for i in tanXuat_gdp:
-        s_gdp = round(s_gdp + i, 2)
-        tanXuatTL_gdp.append(s_gdp)
+#     # Khoảng
+#     khoang_gdp = ['< '+str(k1_gdp-0.01), str(k1_gdp) + " - " + str(k2_gdp-0.01),
+#                   str(k2_gdp) + " - " + str(k3_gdp-0.01), '>= ' + str(k3_gdp)]
+#     # Tần số
+#     tanso_gdp = [len(khoang1_gdp), len(khoang2_gdp),
+#                  len(khoang3_gdp), len(khoang4_gdp)]
+#     # Tần xuất
+#     tanXuat_gdp = [round((i*100)/sum(tanso_gdp), 2)for i in tanso_gdp]
+#     # Tần xuất tích lũy
+#     tanXuatTL_gdp = []
+#     s_gdp = 0
+#     for i in tanXuat_gdp:
+#         s_gdp = round(s_gdp + i, 2)
+#         tanXuatTL_gdp.append(s_gdp)
 
-    # Chia khoảng % Tăng trưởng
+#     # Chia khoảng % Tăng trưởng
 
-    k_growth = round((2*len(Growth_AFF_value))**(1/3))
-    h_growth = math.ceil(
-        (int(max(Growth_AFF_value))-int(min(Growth_AFF_value)))/k_growth)
+#     k_growth = round((2*len(Growth_AFF_value))**(1/3))
+#     h_growth = math.ceil(
+#         (int(max(Growth_AFF_value))-int(min(Growth_AFF_value)))/k_growth)
 
-    k1_growth = min(Growth_AFF_value)+h_growth
-    k2_growth = min(Growth_AFF_value)+2*h_growth
-    k3_growth = min(Growth_AFF_value)+3*h_growth
+#     k1_growth = min(Growth_AFF_value)+h_growth
+#     k2_growth = min(Growth_AFF_value)+2*h_growth
+#     k3_growth = min(Growth_AFF_value)+3*h_growth
 
-    khoang1_growth, khoang2_growth, khoang3_growth, khoang4_growth = [], [], [], []
-    for i in Growth_AFF_value:
-        if i < k1_growth-0.01:
-            khoang1_growth.append(i)
-        elif i >= k1_growth and i < k2_growth-0.01:
-            khoang2_growth.append(i)
-        elif i >= k2_growth and i < k3_growth-0.01:
-            khoang3_growth.append(i)
-        elif i >= k3_growth:
-            khoang4_growth.append(i)
+#     khoang1_growth, khoang2_growth, khoang3_growth, khoang4_growth = [], [], [], []
+#     for i in Growth_AFF_value:
+#         if i < k1_growth-0.01:
+#             khoang1_growth.append(i)
+#         elif i >= k1_growth and i < k2_growth-0.01:
+#             khoang2_growth.append(i)
+#         elif i >= k2_growth and i < k3_growth-0.01:
+#             khoang3_growth.append(i)
+#         elif i >= k3_growth:
+#             khoang4_growth.append(i)
 
-    # Khoảng
-    khoang_growth = ['< '+str(round(k1_growth-0.01, 2)), str(round(k1_growth, 2)) + " - " + str(round(
-        k2_growth-0.01, 2)), str(round(k2_growth, 2)) + " - " + str(round(k3_growth-0.01, 2)), '>= ' + str(k3_growth)]
-    # Tần số
-    tanso_growth = [len(khoang1_growth), len(khoang2_growth),
-                    len(khoang3_growth), len(khoang4_growth)]
-    # Tần xuất
-    tanXuat_growth = [round((i*100)/sum(tanso_growth), 2)for i in tanso_growth]
-    # Tần xuất tích lũy
-    tanXuatTL_growth = []
-    s_growth = 0
-    for i in tanXuat_growth:
-        s_growth = round(s_growth + i, 2)
-        tanXuatTL_growth.append(s_growth)
+#     # Khoảng
+#     khoang_growth = ['< '+str(round(k1_growth-0.01, 2)), str(round(k1_growth, 2)) + " - " + str(round(
+#         k2_growth-0.01, 2)), str(round(k2_growth, 2)) + " - " + str(round(k3_growth-0.01, 2)), '>= ' + str(k3_growth)]
+#     # Tần số
+#     tanso_growth = [len(khoang1_growth), len(khoang2_growth),
+#                     len(khoang3_growth), len(khoang4_growth)]
+#     # Tần xuất
+#     tanXuat_growth = [round((i*100)/sum(tanso_growth), 2)for i in tanso_growth]
+#     # Tần xuất tích lũy
+#     tanXuatTL_growth = []
+#     s_growth = 0
+#     for i in tanXuat_growth:
+#         s_growth = round(s_growth + i, 2)
+#         tanXuatTL_growth.append(s_growth)
 
-    stt = [i for i in range(1, len(GDP_AFF_year)+1)]
-    df2 = {'STT': pd.Series(stt, index=stt),
-           'Year': pd.Series(GDP_AFF_year, index=stt),
-           'GDP': pd.Series(GDP_AFF_value, index=stt, dtype='float'),
-           'Growth': pd.Series(Growth_AFF_value, index=[i for i in range(1, len(Growth_AFF_year)+1)], dtype='float')}
-    df2 = pd.DataFrame(df2)
+#     stt = [i for i in range(1, len(GDP_AFF_year)+1)]
+#     df2 = {'STT': pd.Series(stt, index=stt),
+#            'Year': pd.Series(GDP_AFF_year, index=stt),
+#            'GDP': pd.Series(GDP_AFF_value, index=stt, dtype='float'),
+#            'Growth': pd.Series(Growth_AFF_value, index=[i for i in range(1, len(Growth_AFF_year)+1)], dtype='float')}
+#     df2 = pd.DataFrame(df2)
 
-    figTanso1 = go.Figure()
-    figTanso1.add_trace(go.Bar(x=khoang_gdp, y=tanso_gdp, text=tanso_gdp,
-                               textposition='inside', marker=dict(color='#0099ff')))
-    figTanso1.update_layout(title='Biểu đồ tần số',
-                            xaxis_title='Phần trăm',
-                            yaxis_title='Tần số')
-# lam toi day---------------------------------
-    figTanSuat1 = go.Figure()
-    figTanSuat1.add_trace(go.Pie(labels=khoang_gdp, values=tanXuat_gdp))
-    figTanSuat1.update_layout(legend=dict(
-        orientation="h",
-        yanchor="bottom",
-        y=-0.5,
-        xanchor="right",
-        x=0.75
-    ))
+#     figTanso1 = go.Figure()
+#     figTanso1.add_trace(go.Bar(x=khoang_gdp, y=tanso_gdp, text=tanso_gdp,
+#                                textposition='inside', marker=dict(color='#0099ff')))
+#     figTanso1.update_layout(title='Biểu đồ tần số',
+#                             xaxis_title='Phần trăm',
+#                             yaxis_title='Tần số')
+# # lam toi day---------------------------------
+#     figTanSuat1 = go.Figure()
+#     figTanSuat1.add_trace(go.Pie(labels=khoang_gdp, values=tanXuat_gdp))
+#     figTanSuat1.update_layout(legend=dict(
+#         orientation="h",
+#         yanchor="bottom",
+#         y=-0.5,
+#         xanchor="right",
+#         x=0.75
+#     ))
 
-    figTSTL1 = go.Figure()
-    figTSTL1.add_trace(go.Scatter(x=khoang_gdp, y=tanXuatTL_gdp))
-    figTSTL1.update_layout(
-        xaxis_title='USD',
-        yaxis_title='Tần xuất tích lũy')
+#     figTSTL1 = go.Figure()
+#     figTSTL1.add_trace(go.Scatter(x=khoang_gdp, y=tanXuatTL_gdp))
+#     figTSTL1.update_layout(
+#         xaxis_title='USD',
+#         yaxis_title='Tần xuất tích lũy')
 
-    figTanSo2 = go.Figure()
-    figTanSo2.add_trace(go.Bar(x=khoang_growth, y=tanso_growth, text=tanso_growth,
-                               textposition='inside', marker=dict(color='#0099ff')))
-    figTanSo2.update_layout(
-        xaxis_title='Phần trăm',
-        yaxis_title='Tần số')
+#     figTanSo2 = go.Figure()
+#     figTanSo2.add_trace(go.Bar(x=khoang_growth, y=tanso_growth, text=tanso_growth,
+#                                textposition='inside', marker=dict(color='#0099ff')))
+#     figTanSo2.update_layout(
+#         xaxis_title='Phần trăm',
+#         yaxis_title='Tần số')
 
-    figTanSuat2 = go.Figure()
-    figTanSuat2.add_trace(go.Pie(labels=khoang_gdp, values=tanXuat_gdp))
-    figTanSuat2.update_layout(legend=dict(
-        orientation="h",
-        yanchor="bottom",
-        y=-0.5,
-        xanchor="right",
-        x=0.75
-    ))
-    figTSTL2 = go.Figure()
-    figTSTL2.add_trace(go.Scatter(x=khoang_gdp, y=tanXuatTL_gdp))
-    figTSTL2.update_layout(
-        xaxis_title='USD',
-        yaxis_title='Tần xuất tích lũy')
+#     figTanSuat2 = go.Figure()
+#     figTanSuat2.add_trace(go.Pie(labels=khoang_gdp, values=tanXuat_gdp))
+#     figTanSuat2.update_layout(legend=dict(
+#         orientation="h",
+#         yanchor="bottom",
+#         y=-0.5,
+#         xanchor="right",
+#         x=0.75
+#     ))
+#     figTSTL2 = go.Figure()
+#     figTSTL2.add_trace(go.Scatter(x=khoang_gdp, y=tanXuatTL_gdp))
+#     figTSTL2.update_layout(
+#         xaxis_title='USD',
+#         yaxis_title='Tần xuất tích lũy')
 
-    stt = [j for j in range(1, k_gdp+1)]
-    ddf_gdp = {'Chia khoảng': pd.Series(khoang_gdp, index=stt),
-               'Tần số': pd.Series(tanso_gdp, index=stt, dtype='int'),
-               'Tần xuất': pd.Series(tanXuat_gdp, index=stt, dtype='float'),
-               'Tần xuất tích lũy': pd.Series(tanXuatTL_gdp, index=stt, dtype='float')}
-    ddf_gdp = pd.DataFrame(ddf_gdp)
+#     stt = [j for j in range(1, k_gdp+1)]
+#     ddf_gdp = {'Chia khoảng': pd.Series(khoang_gdp, index=stt),
+#                'Tần số': pd.Series(tanso_gdp, index=stt, dtype='int'),
+#                'Tần xuất': pd.Series(tanXuat_gdp, index=stt, dtype='float'),
+#                'Tần xuất tích lũy': pd.Series(tanXuatTL_gdp, index=stt, dtype='float')}
+#     ddf_gdp = pd.DataFrame(ddf_gdp)
 
-    ddf_growth = {'Chia khoảng': pd.Series(khoang_growth, index=stt),
-                  'Tần số': pd.Series(tanso_growth, index=stt, dtype='int'),
-                  'Tần xuất': pd.Series(tanXuat_growth, index=stt, dtype='float'),
-                  'Tần xuất tích lũy': pd.Series(tanXuatTL_growth, index=stt, dtype='float')}
-    ddf_growth = pd.DataFrame(ddf_growth)
+#     ddf_growth = {'Chia khoảng': pd.Series(khoang_growth, index=stt),
+#                   'Tần số': pd.Series(tanso_growth, index=stt, dtype='int'),
+#                   'Tần xuất': pd.Series(tanXuat_growth, index=stt, dtype='float'),
+#                   'Tần xuất tích lũy': pd.Series(tanXuatTL_growth, index=stt, dtype='float')}
+#     ddf_growth = pd.DataFrame(ddf_growth)
 
-    stt1 = [i for i in range(1, len(GDP_GS_year)+1)]
-    df3 = {'STT': pd.Series(stt1, index=stt1),
-           'Year': pd.Series(GDP_GS_year, index=stt1),
-           '%GDP': pd.Series(GDP_GS_value, index=stt1, dtype='float'),
-           '%Tăng trưởng': pd.Series(Growth_GS_value, index=[i for i in range(1, len(Growth_GS_year)+1)], dtype='float')}
-    df3 = pd.DataFrame(df3)
+#     stt1 = [i for i in range(1, len(GDP_GS_year)+1)]
+#     df3 = {'STT': pd.Series(stt1, index=stt1),
+#            'Year': pd.Series(GDP_GS_year, index=stt1),
+#            '%GDP': pd.Series(GDP_GS_value, index=stt1, dtype='float'),
+#            '%Tăng trưởng': pd.Series(Growth_GS_value, index=[i for i in range(1, len(Growth_GS_year)+1)], dtype='float')}
+#     df3 = pd.DataFrame(df3)
 
-    figBox = go.Figure()
-    figBox.add_trace(go.Box(y=df3['%GDP'].values,
-                            name='%GDP', boxpoints='all'))
-    figBox.add_trace(
-        go.Box(y=df3['%Tăng trưởng'].values, name='%Tăng trưởng', boxpoints='all'))
+#     figBox = go.Figure()
+#     figBox.add_trace(go.Box(y=df3['%GDP'].values,
+#                             name='%GDP', boxpoints='all'))
+#     figBox.add_trace(
+#         go.Box(y=df3['%Tăng trưởng'].values, name='%Tăng trưởng', boxpoints='all'))
 
-    hist = go.Figure()
-    hist.add_trace(go.Histogram(x=df3['%GDP'].values, name='%GDP'))
-    hist.add_trace(go.Histogram(
-        x=df3['%Tăng trưởng'].values, name='%Tăng trưởng'))
+#     hist = go.Figure()
+#     hist.add_trace(go.Histogram(x=df3['%GDP'].values, name='%GDP'))
+#     hist.add_trace(go.Histogram(
+#         x=df3['%Tăng trưởng'].values, name='%Tăng trưởng'))
 
-    hist.update_layout(barmode='overlay')
-    hist.update_traces(opacity=0.7)
+#     hist.update_layout(barmode='overlay')
+#     hist.update_traces(opacity=0.7)
 
-    gfig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+#     gfig = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
 
-    gtanso1 = json.dumps(figTanSo1, cls=plotly.utils.PlotlyJSONEncoder)
-    gtansuat1 = json.dumps(figTanSuat1, cls=plotly.utils.PlotlyJSONEncoder)
-    gtstl1 = json.dumps(figTSTL1, cls=plotly.utils.PlotlyJSONEncoder)
-    gtanso2 = json.dumps(figTanSo2, cls=plotly.utils.PlotlyJSONEncoder)
-    gtansuat2 = json.dumps(figTanSuat2, cls=plotly.utils.PlotlyJSONEncoder)
-    gtstl2 = json.dumps(figTSTL2, cls=plotly.utils.PlotlyJSONEncoder)
-    gbox = json.dumps(figBox, cls=plotly.utils.PlotlyJSONEncoder)
+#     gtanso1 = json.dumps(figTanSo1, cls=plotly.utils.PlotlyJSONEncoder)
+#     gtansuat1 = json.dumps(figTanSuat1, cls=plotly.utils.PlotlyJSONEncoder)
+#     gtstl1 = json.dumps(figTSTL1, cls=plotly.utils.PlotlyJSONEncoder)
+#     gtanso2 = json.dumps(figTanSo2, cls=plotly.utils.PlotlyJSONEncoder)
+#     gtansuat2 = json.dumps(figTanSuat2, cls=plotly.utils.PlotlyJSONEncoder)
+#     gtstl2 = json.dumps(figTSTL2, cls=plotly.utils.PlotlyJSONEncoder)
+#     gbox = json.dumps(figBox, cls=plotly.utils.PlotlyJSONEncoder)
 
-    ghist = json.dumps(hist, cls=plotly.utils.PlotlyJSONEncoder)
+#     ghist = json.dumps(hist, cls=plotly.utils.PlotlyJSONEncoder)
 
-    # bang1 = json.dumps(ddf_gdp, cls=plotly.utils.PlotlyJSONEncoder)
-    # bang2 = json.dumps(ddf_growth, cls=plotly.utils.PlotlyJSONEncoder)
+#     # bang1 = json.dumps(ddf_gdp, cls=plotly.utils.PlotlyJSONEncoder)
+#     # bang2 = json.dumps(ddf_growth, cls=plotly.utils.PlotlyJSONEncoder)
 
-    return gfig, gtanso1, gtansuat1, gtstl1, gtanso2, gtansuat2, gtstl2, gbox, ghist, ddf_gdp, ddf_growth
+#     return gfig, gtanso1, gtansuat1, gtstl1, gtanso2, gtansuat2, gtstl2, gbox, ghist, ddf_gdp, ddf_growth
 # -------------PAGE1--------------------
 
 
