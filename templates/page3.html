@@ -35,7 +35,7 @@
     <div class="wrapper ">
         <div class="sidebar" data-color="white" data-active-color="danger">
             <div class="logo">
-                <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+                <a href="" class="simple-text logo-mini">
                     <div class="logo-image-small">
                         <img src="{{ url_for('static', filename = 'assets/img/logo-small.png') }}">
 
@@ -57,40 +57,40 @@
                             <p>Thanh toán thu nhập chính (BoP, current US$)</p>
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="{{ url_for('page2') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>Xuất khẩu hàng hóa và dịch vụ (% GDP, % tăng trưởng hàng năm)</p>
 
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ url_for('simplechart') }}">
+                    <li class="active">
+                        <a href="{{ url_for('page3') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>Giá trị gia tăng Nông, lâm, ngư nghiệp(% GDP, % tăng trưởng
                                 hằng năm)</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page4') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>Tổng chi tiêu quốc gia (% GDP)</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page5') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>DỮ LIỆU TĂNG TRƯỞNG THƯƠNG MẠI QUA CÁC NĂM (%GDP)</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page6') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>SỰ TĂNG TRƯỞNG GIÁ TRỊ TRONG NGÀNH DỆT MAY (% giá trị gia tăng trong sản xuất)</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page7') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>NHỮNG BIẾN ĐỘNG TRONG MẠNG LƯỚI BUÔN BÁN HÀNG HÓA</p>
                         </a>
@@ -102,8 +102,10 @@
             <!-- Navbar -->
             <div class="card text-center">
                 <div class="card-body">
-                    <h4 class="card-title">Xuất khẩu hàng hóa và dịch vụ (% GDP, % tăng trưởng hằng năm) </h4>
-                    <h4 class="card-title"> Exports of goods and services (% of GDP, annual % growth) </h4>
+                    <h4 class="card-title">Tình hình phát triển Nông, Lâm, Ngư nghiệp (% GDP, % tăng trưởng hằng năm)
+                    </h4>
+                    <h4 class="card-title"> Agriculture, forestry, and fishing, value added (% of GDP & annual % growth)
+                    </h4>
 
                 </div>
             </div>
@@ -113,7 +115,8 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Xuất khẩu hàng hóa và dịch vụ
+                                <h5 class="card-title" style="color: #f6c768;">Tình hình phát triển Nông, Lâm, Ngư
+                                    nghiệp
                                 </h5>
                                 <p class="card-category">(% GDP, % tăng trưởng hằng năm)</p>
                             </div>
@@ -136,8 +139,7 @@
                         <div class="card ">
                             <div class="card-header ">
                                 <h5 class="card-title" style="color: #f6c768;">Bảng Tần số, Tần suất, Tần suất tích lũy
-                                    xuất khẩu hàng hóa và
-                                    dịch vụ(% GDP)</h5>
+                                    tình hình phát triển Nông, Lâm, Ngư nghiệp(% GDP)</h5>
                                 <p class="card-category">(% GDP)</p>
                             </div>
                             <div class="card-body ">
@@ -150,8 +152,8 @@
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần suất xuất khẩu hàng hóa và
-                                    dịch vụ(% GDP)</h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần suất tình hình phát triển
+                                    Nông, Lâm, Ngư nghiệp(% GDP)</h5>
                                 <p class="card-category">(% GDP)</p>
                             </div>
                             <div class="card-body ">
@@ -167,8 +169,8 @@
                     <div class="col-md-4">
                         <div class="card card-chart" style="margin-bottom: 0px;">
                             <div class="card-header">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số xuất khẩu hàng hóa và
-                                    dịch vụ(% GDP)</h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số tình hình phát triển Nông,
+                                    Lâm, Ngư nghiệp(% GDP)</h5>
                                 <p class="card-category">(% GDP)</p>
                             </div>
                             <div class="card-body">
@@ -188,9 +190,7 @@
                             <div class="card-header ">
                                 <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số, tần suất, tần suất tích
                                     lũy số
-                                    xuất khẩu hàng hóa
-                                    và
-                                    dịch vụ(% GDP)</h5>
+                                    tình hình phát triển Nông, Lâm, Ngư nghiệp(% GDP)</h5>
                                 <p class="card-category">(% GDP)</p>
                             </div>
                             <div class="card-body ">
@@ -205,14 +205,52 @@
                         </div>
                     </div>
                 </div>
+                <!-- bang1 -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card ">
+                            <div class="card-header ">
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tình hình phát triển Nông, Lâm,
+                                    Ngư nghiệp(% GDP)</h5>
+                                <p class="card-category">( % GDP)</p>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart" id="bargraphbox222">
+                                    <script>
+                                        var graphsbox222 = {{ box1 | safe}};
+                                        Plotly.plot('bargraphbox222', graphsbox222, {});
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card ">
+                            <div class="card-header ">
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tình hình phát triển Nông, Lâm,
+                                    Ngư nghiệp(% GDP)</h5>
+                                <p class="card-category">(% GDP)</p>
+                            </div>
+                            <div class="card-body ">
+                                <div class="chart" id="bargraphhist111">
+                                    <script>
+                                        var graphshist111 = {{ hist1 | safe}};
+                                        Plotly.plot('bargraphhist111', graphshist111, {});
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- bang 2 -->
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
                                 <h5 class="card-title" style="color: #f6c768;">Bảng tần số, tần suất, tần suất tích lũy
-                                    xuất khẩu hàng hóa và
-                                    dịch vụ(% tăng trưởng hằng năm) </h5>
+                                    tình hình phát triển Nông, Lâm, Ngư nghiệp (% tăng trưởng hằng năm) </h5>
                                 <p class="card-category">(% tăng trưởng hằng năm)</p>
                             </div>
                             <div class="card-body ">
@@ -225,8 +263,8 @@
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần suất xuất khẩu hàng hóa và
-                                    dịch vụ(% tăng trưởng hằng năm) </h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần suất tình hình phát triển
+                                    Nông, Lâm, Ngư nghiệp(% tăng trưởng hằng năm) </h5>
                                 <p class="card-category">(% tăng trưởng hằng năm)</p>
                             </div>
                             <div class="card-body ">
@@ -243,8 +281,8 @@
                     <div class="col-md-4">
                         <div class="card card-chart">
                             <div class="card-header">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số xuất khẩu hàng hóa và
-                                    dịch vụ(% tăng trưởng hằng năm) </h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số tình hình phát triển Nông,
+                                    Lâm, Ngư nghiệp(% tăng trưởng hằng năm) </h5>
                                 <p class="card-category">(% tăng trưởng hằng năm)</p>
                             </div>
                             <div class="card-body">
@@ -273,8 +311,7 @@
                         <div class="card ">
                             <div class="card-header ">
                                 <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số, tần suất, tần suất tích
-                                    lũy Xuất khẩu hàng hóa và
-                                    dịch vụ(% tăng trưởng hằng năm) </h5>
+                                    lũy tình hình phát triển Nông, Lâm, Ngư nghiệp(% tăng trưởng hằng năm) </h5>
                                 <p class="card-category">(% tăng trưởng hằng năm)</p>
                             </div>
                             <div class="card-body ">
@@ -293,14 +330,14 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ xuất khẩu hàng hóa và
-                                    dịch vụ(%GDP, % tăng trưởng hằng năm)</h5>
-                                <p class="card-category">(%GDP, % tăng trưởng hằng năm)</p>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tình hình phát triển Nông, Lâm,
+                                    Ngư nghiệp(% tăng trưởng hằng năm)</h5>
+                                <p class="card-category">( % tăng trưởng hằng năm)</p>
                             </div>
                             <div class="card-body ">
                                 <div class="chart" id="bargraphbox">
                                     <script>
-                                        var graphsbox = {{ box | safe}};
+                                        var graphsbox = {{ box2 | safe}};
                                         Plotly.plot('bargraphbox', graphsbox, {});
                                     </script>
                                 </div>
@@ -312,14 +349,14 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ xuất khẩu hàng hóa và
-                                    dịch vụ(%GDP, % tăng trưởng hằng năm)</h5>
-                                <p class="card-category">(%GDP, % tăng trưởng hằng năm)</p>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tình hình phát triển Nông, Lâm,
+                                    Ngư nghiệp(% tăng trưởng hằng năm)</h5>
+                                <p class="card-category">(% tăng trưởng hằng năm)</p>
                             </div>
                             <div class="card-body ">
                                 <div class="chart" id="bargraphhist">
                                     <script>
-                                        var graphshist = {{ hist | safe}};
+                                        var graphshist = {{ hist2 | safe}};
                                         Plotly.plot('bargraphhist', graphshist, {});
                                     </script>
                                 </div>

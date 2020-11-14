@@ -35,7 +35,7 @@
     <div class="wrapper ">
         <div class="sidebar" data-color="white" data-active-color="danger">
             <div class="logo">
-                <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+                <a href="" class="simple-text logo-mini">
                     <div class="logo-image-small">
                         <img src="{{ url_for('static', filename = 'assets/img/logo-small.png') }}">
 
@@ -57,40 +57,39 @@
                             <p>Thanh toán thu nhập chính (BoP, current US$)</p>
                         </a>
                     </li>
-                    <li class="active">
-                        <a href="{{ url_for('page2') }}">
-                            <i class="nc-icon nc-sound-wave"></i>
-                            <p>Xuất khẩu hàng hóa và dịch vụ (% GDP, % tăng trưởng hàng năm)</p>
+                    <li <a href="{{ url_for('page2') }}">
+                        <i class="nc-icon nc-sound-wave"></i>
+                        <p>Xuất khẩu hàng hóa và dịch vụ (% GDP, % tăng trưởng hàng năm)</p>
 
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page3') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>Giá trị gia tăng Nông, lâm, ngư nghiệp(% GDP, % tăng trưởng
                                 hằng năm)</p>
                         </a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="{{ url_for('page4') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>Tổng chi tiêu quốc gia (% GDP)</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page5') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>DỮ LIỆU TĂNG TRƯỞNG THƯƠNG MẠI QUA CÁC NĂM (%GDP)</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page6') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>SỰ TĂNG TRƯỞNG GIÁ TRỊ TRONG NGÀNH DỆT MAY (% giá trị gia tăng trong sản xuất)</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page7') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>NHỮNG BIẾN ĐỘNG TRONG MẠNG LƯỚI BUÔN BÁN HÀNG HÓA</p>
                         </a>
@@ -140,9 +139,9 @@
                                 <!-- <p class="card-category">(% GDP)</p> -->
                             </div>
                             <div class="card-body ">
-                                <!-- {% for table in bang1 %}
+                                {% for table in bang %}
                                 {{ table|safe }}
-                                {% endfor %} -->
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

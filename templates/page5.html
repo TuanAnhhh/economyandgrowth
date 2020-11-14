@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Gross national expenditure
+        Trade (% of GDP)
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
@@ -35,7 +35,7 @@
     <div class="wrapper ">
         <div class="sidebar" data-color="white" data-active-color="danger">
             <div class="logo">
-                <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+                <a href="" class="simple-text logo-mini">
                     <div class="logo-image-small">
                         <img src="{{ url_for('static', filename = 'assets/img/logo-small.png') }}">
 
@@ -57,7 +57,7 @@
                             <p>Thanh toán thu nhập chính (BoP, current US$)</p>
                         </a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="{{ url_for('page2') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>Xuất khẩu hàng hóa và dịch vụ (% GDP, % tăng trưởng hàng năm)</p>
@@ -65,7 +65,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page3') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>Giá trị gia tăng Nông, lâm, ngư nghiệp(% GDP, % tăng trưởng
                                 hằng năm)</p>
@@ -77,20 +77,20 @@
                             <p>Tổng chi tiêu quốc gia (% GDP)</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ url_for('simplechart') }}">
+                    <li class="active">
+                        <a href="{{ url_for('page5') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>DỮ LIỆU TĂNG TRƯỞNG THƯƠNG MẠI QUA CÁC NĂM (%GDP)</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page6') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>SỰ TĂNG TRƯỞNG GIÁ TRỊ TRONG NGÀNH DỆT MAY (% giá trị gia tăng trong sản xuất)</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ url_for('simplechart') }}">
+                        <a href="{{ url_for('page7') }}">
                             <i class="nc-icon nc-sound-wave"></i>
                             <p>NHỮNG BIẾN ĐỘNG TRONG MẠNG LƯỚI BUÔN BÁN HÀNG HÓA</p>
                         </a>
@@ -102,8 +102,8 @@
             <!-- Navbar -->
             <div class="card text-center">
                 <div class="card-body">
-                    <h4 class="card-title">Tổng chi tiêu quốc gia (% GDP) </h4>
-                    <h4 class="card-title">Gross national expenditure (% of GDP) </h4>
+                    <h4 class="card-title">Dữ liệu tăng trưởng thương mại qua các năm(%GDP) </h4>
+                    <h4 class="card-title">Trade (% of GDP) </h4>
 
                 </div>
             </div>
@@ -113,7 +113,8 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tổng chi tiêu quốc gia
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tăng trưởng thương mại qua các
+                                    năm(%GDP)
                                 </h5>
                                 <p class="card-category">(% GDP)</p>
                             </div>
@@ -136,21 +137,21 @@
                         <div class="card ">
                             <div class="card-header ">
                                 <h5 class="card-title" style="color: #f6c768;">Bảng Tần số, Tần suất, Tần suất tích lũy
-                                    tổng chi tiêu quốc gia(% GDP) </h5>
+                                    tăng trưởng thương mại qua các năm </h5>
                                 <!-- <p class="card-category">(% GDP)</p> -->
                             </div>
                             <div class="card-body ">
-                                <!-- {% for table in bang1 %}
+                                {% for table in bang %}
                                 {{ table|safe }}
-                                {% endfor %} -->
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần suất tổng chi tiêu quốc gia
-                                    (% GDP)</h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần suất tăng trưởng thương mại
+                                    qua các năm</h5>
                                 <!-- <p class="card-category">(% GDP)</p> -->
                             </div>
                             <div class="card-body ">
@@ -166,8 +167,8 @@
                     <div class="col-md-4">
                         <div class="card card-chart" style="margin-bottom: 0px;">
                             <div class="card-header">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số tổng chi tiêu quốc gia
-                                    (% GDP)</h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số tăng trưởng thương mại qua
+                                    các năm</h5>
                                 <!-- <p class="card-category">(% GDP)</p> -->
                             </div>
                             <div class="card-body">
@@ -187,8 +188,7 @@
                             <div class="card-header ">
                                 <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số, tần suất, tần suất tích
                                     lũy số
-                                    tổng chi tiêu quốc gia
-                                    (% GDP)</h5>
+                                    tăng trưởng thương mại qua các năm</h5>
                                 <p class="card-category">(% GDP)</p>
                             </div>
                             <div class="card-body ">
@@ -207,8 +207,8 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tổng chi tiêu quốc gia
-                                    (% GDP)</h5>
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tổng tăng trưởng thương mại qua
+                                    các năm</h5>
                                 <p class="card-category">(%GDP)</p>
                             </div>
                             <div class="card-body ">
@@ -226,7 +226,8 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tổng chi tiêu quốc gia
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tăng trưởng thương mại qua các
+                                    nămtổng chi tiêu quốc gia
                                     (% GDP)</h5>
                                 <p class="card-category">(%GDP)</p>
                             </div>
