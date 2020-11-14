@@ -304,12 +304,12 @@ def tansuat_tso_tstl_page6():
     figTstl.add_trace(go.Scatter(x=khoang_Clothing,
                                  y=tanXuatTL_Clothing, marker=dict(color='#FF3366')))
     figTstl.update_layout(
-        xaxis_title='GDP %',
+        xaxis_title='Giá trị gia tăng',
         yaxis_title='Tần xuất tích lũy')
 
     figBox = go.Figure()
     figBox.add_trace(go.Box(y=df_Clothing['giá trị gia tăng trong sản xuất(%)'].values,
-                            name='giá trị gia tăng trong sản xuất(%)', boxpoints='all'))
+                            boxpoints='all'))
 
     hist = go.Figure()
     hist.add_trace(go.Histogram(
@@ -410,7 +410,7 @@ def tansuat_tso_tstl_page5():
     figTstl.add_trace(go.Scatter(
         x=khoang_Trade, y=tanXuatTL_Trade, marker=dict(color='#FF3366')))
     figTstl.update_layout(
-        xaxis_title='GDP %',
+        xaxis_title='GDP ',
         yaxis_title='Tần xuất tích lũy')
     figBox = go.Figure()
     figBox.add_trace(go.Box(y=df_Trades['GDP(%)'].values,
@@ -435,6 +435,7 @@ def tansuat_tso_tstl_page5():
 def tansuat_tso_tstl_page4():
     year_Gross, value_Gross = getYear_Value(
         'Gross national expenditure (% of GDP)')
+    value_Gross = [round(i, 2) for i in value_Gross]
     fig = go.Figure()
     fig.add_trace(go.Bar(x=year_Gross, y=value_Gross, text=value_Gross,
                          textposition='inside', marker=dict(color='#339966')))
@@ -535,6 +536,10 @@ def tansuat_tso_tstl_page3():
         'Agriculture, forestry, and fishing, value added (% of GDP)')
     Growth_AFF_year, Growth_AFF_value = getYear_Value(
         'Agriculture, forestry, and fishing, value added (annual % growth)')
+    GDP_AFF_year.pop(-1)
+    GDP_AFF_value.pop(-1)
+    GDP_AFF_value = [round(i, 2) for i in GDP_AFF_value]
+
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=Growth_AFF_year, y=Growth_AFF_value, mode='lines+markers',
                              name='% Tăng trưởng hàng năm', marker=dict(color='#fc6d00')))
@@ -748,7 +753,7 @@ def tansuat_tso_tstl_page1():
                   str(k2) + " - " + str(k3-1), ">= "+str(k3)]
     fig = go.Figure()
     fig.add_trace(go.Bar(x=year, y=value, text=value,
-                         textposition='outside', marker=dict(color='#75d397')))
+                         textposition='outside', marker=dict(color='#f6c768')))
     fig.update_layout(title='',
                       xaxis_title='Năm',
                       yaxis_title='USD',
@@ -904,7 +909,7 @@ def tansuat_tso_tstl_page2():
     figTanSo1.add_trace(go.Bar(x=khoang_gdp, y=tanso_gdp, text=tanso_gdp,
                                textposition='inside', marker=dict(color='#0099ff')))
     figTanSo1.update_layout(
-        xaxis_title='Phần trăm',
+        xaxis_title='GDP(%)',
         yaxis_title='Tần số')
 
     figTanSuat1 = go.Figure()
@@ -920,14 +925,14 @@ def tansuat_tso_tstl_page2():
     figTSTL1 = go.Figure()
     figTSTL1.add_trace(go.Scatter(x=khoang_gdp, y=tanXuatTL_gdp))
     figTSTL1.update_layout(
-        xaxis_title='USD',
-        yaxis_title='Tần xuất tích lũy')
+        xaxis_title='GDP(%)',
+        yaxis_title='Tần xuất tích lũy GDP')
 
     figTanSo2 = go.Figure()
     figTanSo2.add_trace(go.Bar(x=khoang_growth, y=tanso_growth, text=tanso_growth,
                                textposition='inside', marker=dict(color='#0099ff')))
     figTanSo2.update_layout(
-        xaxis_title='Phần trăm',
+        xaxis_title='Tăng trưởng (%)',
         yaxis_title='Tần số')
 
     figTanSuat2 = go.Figure()
@@ -942,7 +947,7 @@ def tansuat_tso_tstl_page2():
     figTSTL2 = go.Figure()
     figTSTL2.add_trace(go.Scatter(x=khoang_gdp, y=tanXuatTL_gdp))
     figTSTL2.update_layout(
-        xaxis_title='USD',
+        xaxis_title='Tăng trưởng (%)',
         yaxis_title='Tần xuất tích lũy')
 
     stt = [j for j in range(1, k_gdp+1)]

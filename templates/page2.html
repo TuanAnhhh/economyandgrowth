@@ -25,8 +25,6 @@
         href="{{ url_for('static',filename='assets/demo/demo.css" rel="stylesheet') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/analysis.css') }}">
-
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
 </head>
@@ -49,7 +47,7 @@
           </div> -->
                 </a>
             </div>
-            <div class="sidebar-wrapper">
+            <div class="sidebar-wrapper" style="overflow-x: hidden;">
                 <ul class="nav">
                     <li>
                         <a href="{{ url_for('page1') }}">
@@ -136,6 +134,7 @@
                         <div class="card ">
                             <div class="card-header ">
                                 <h5 class="card-title" style="color: #f6c768;">Bảng Tần số, Tần suất, Tần suất tích lũy
+                                    thể hiện
                                     xuất khẩu hàng hóa và
                                     dịch vụ(% GDP)</h5>
                                 <p class="card-category">(% GDP)</p>
@@ -150,7 +149,8 @@
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần suất xuất khẩu hàng hóa và
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần suất thể hiện xuất khẩu hàng
+                                    hóa và
                                     dịch vụ(% GDP)</h5>
                                 <p class="card-category">(% GDP)</p>
                             </div>
@@ -167,7 +167,8 @@
                     <div class="col-md-4">
                         <div class="card card-chart" style="margin-bottom: 0px;">
                             <div class="card-header">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số xuất khẩu hàng hóa và
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số thể hiện xuất khẩu hàng
+                                    hóa và
                                     dịch vụ(% GDP)</h5>
                                 <p class="card-category">(% GDP)</p>
                             </div>
@@ -187,7 +188,7 @@
                         <div class="card ">
                             <div class="card-header ">
                                 <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số, tần suất, tần suất tích
-                                    lũy số
+                                    lũy thể hiện
                                     xuất khẩu hàng hóa
                                     và
                                     dịch vụ(% GDP)</h5>
@@ -211,6 +212,7 @@
                         <div class="card ">
                             <div class="card-header ">
                                 <h5 class="card-title" style="color: #f6c768;">Bảng tần số, tần suất, tần suất tích lũy
+                                    thể hiện
                                     xuất khẩu hàng hóa và
                                     dịch vụ(% tăng trưởng hằng năm) </h5>
                                 <p class="card-category">(% tăng trưởng hằng năm)</p>
@@ -225,7 +227,8 @@
                     <div class="col-md-4">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần suất xuất khẩu hàng hóa và
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần suất thẻ hiện xuất khẩu hàng
+                                    hóa và
                                     dịch vụ(% tăng trưởng hằng năm) </h5>
                                 <p class="card-category">(% tăng trưởng hằng năm)</p>
                             </div>
@@ -243,7 +246,8 @@
                     <div class="col-md-4">
                         <div class="card card-chart">
                             <div class="card-header">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số xuất khẩu hàng hóa và
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số thể hiện xuất khẩu hàng
+                                    hóa và
                                     dịch vụ(% tăng trưởng hằng năm) </h5>
                                 <p class="card-category">(% tăng trưởng hằng năm)</p>
                             </div>
@@ -273,7 +277,7 @@
                         <div class="card ">
                             <div class="card-header ">
                                 <h5 class="card-title" style="color: #f6c768;">Biểu đồ tần số, tần suất, tần suất tích
-                                    lũy Xuất khẩu hàng hóa và
+                                    lũy thể hiện xuất uất khẩu hàng hóa và
                                     dịch vụ(% tăng trưởng hằng năm) </h5>
                                 <p class="card-category">(% tăng trưởng hằng năm)</p>
                             </div>
@@ -293,7 +297,8 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ xuất khẩu hàng hóa và
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ Box plot thể hiện xuất khẩu hàng
+                                    hóa và
                                     dịch vụ(%GDP, % tăng trưởng hằng năm)</h5>
                                 <p class="card-category">(%GDP, % tăng trưởng hằng năm)</p>
                             </div>
@@ -312,7 +317,8 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header ">
-                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ xuất khẩu hàng hóa và
+                                <h5 class="card-title" style="color: #f6c768;">Biểu đồ Histogram thể hiện xuất khẩu hàng
+                                    hóa và
                                     dịch vụ(%GDP, % tăng trưởng hằng năm)</h5>
                                 <p class="card-category">(%GDP, % tăng trưởng hằng năm)</p>
                             </div>
