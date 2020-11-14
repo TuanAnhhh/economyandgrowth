@@ -399,7 +399,7 @@ def tansuat_tso_tstl_page5():
     figTanSo.add_trace(go.Bar(x=khoang_Trade, y=tanso_Trade, text=tanso_Trade,
                               textposition='inside', marker=dict(color='#FF3366')))
     figTanSo.update_layout(title='Biểu đồ tần số sự tăng trưởng thương mại',
-                           xaxis_title='GDP (%)',
+                           xaxis_title='Giá trị gia tăng (%)',
                            yaxis_title='Tần số')
     figTanSo.update_yaxes(range=[0, 15])
 
@@ -410,7 +410,7 @@ def tansuat_tso_tstl_page5():
     figTstl.add_trace(go.Scatter(
         x=khoang_Trade, y=tanXuatTL_Trade, marker=dict(color='#FF3366')))
     figTstl.update_layout(
-        xaxis_title='GDP ',
+        xaxis_title='Giá trị gia tăng ',
         yaxis_title='Tần xuất tích lũy')
     figBox = go.Figure()
     figBox.add_trace(go.Box(y=df_Trades['GDP(%)'].values,
